@@ -10,7 +10,7 @@ import {
   Anchor,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconLogout, IconUser  } from '@tabler/icons';
+import { IconLogout, IconUser,IconChevronDown  } from '@tabler/icons';
 
 const HEADER_HEIGHT = 60;
 
@@ -55,7 +55,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface HeaderActionProps {
-  links: { link: string; label: string; links: { link: string; label: string }[] }[];
+  links: { link: string; label: string; links?: { link: string; label: string }[] }[];
 }
 
 function NavBar({ links }: HeaderActionProps) {

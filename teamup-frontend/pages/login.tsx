@@ -11,7 +11,7 @@ import {
   Button,
 } from '@mantine/core'
 import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+import NavBar from '../src/components/NavBar';
 
 
 function Login() {
