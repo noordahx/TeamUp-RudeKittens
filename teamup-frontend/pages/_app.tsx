@@ -1,36 +1,26 @@
-import { AppProps } from "next/app";
-import Head from "next/head";
-import { MantineProvider } from "@mantine/core";
-import { Login } from "./login";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { NavBar } from './NavBar'
+import { HomePage } from './api/HomePage'
+import { AboutPage } from './api/AboutPage'
+import { ContactPage } from './api/ContactPage'
 
-export default function App(props: AppProps) {
-  const { Component, pageProps } = props;
-
+export function App() {
   return (
     <>
-      <Head>
-        <title>Page title</title>
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
-
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          /** Put your mantine theme override here */
-          colorScheme: "dark",
-        }}
-      >
-        <Component {...pageProps} />
-      </MantineProvider>
-
-      <MantineProvider>
-        <Login></Login>
-      </MantineProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route path='/'>
+            <HomePage />
+          </Route>
+          <Route path='/about'>
+            <AboutPage />
+          </Route>
+          <Route path='/contact'>
+            <ContactPage />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </>
-  );
+  )
 }
