@@ -411,7 +411,14 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@mantine/core@5.8.3":
+"@mantine/carousel@^5.10.3":
+  "integrity" "sha512-GX0aefg7fsNaJfaHACDvxeXKfmI8guJezL3SyW7CQfTxtj+cF6L6x7rpDtCsh6oDyDTk81JRechRZiSYcBy2bA=="
+  "resolved" "https://registry.npmjs.org/@mantine/carousel/-/carousel-5.10.3.tgz"
+  "version" "5.10.3"
+  dependencies:
+    "@mantine/utils" "5.10.3"
+
+"@mantine/core@5.10.3", "@mantine/core@5.8.3":
   "integrity" "sha512-KiGrBtKhqVfOM82SWvob7635EWGLdXq1q/62YS+x1pgbrOJSk22EU9HgAuL5cJqbZ5Dwggb2irlAhsZNiBx9oQ=="
   "resolved" "https://registry.npmjs.org/@mantine/core/-/core-5.8.3.tgz"
   "version" "5.8.3"
@@ -422,7 +429,7 @@
     "@radix-ui/react-scroll-area" "1.0.0"
     "react-textarea-autosize" "8.3.4"
 
-"@mantine/hooks@5.8.3":
+"@mantine/hooks@5.10.3", "@mantine/hooks@5.8.3":
   "integrity" "sha512-tXUm164GRGRMTtc+oXzJq8Pg4DW9EuURHcM+yV5Hw3kWNIGQzW/9E8ghjjyV2rS9DIdxB678rXAdeL6t2TVrPA=="
   "resolved" "https://registry.npmjs.org/@mantine/hooks/-/hooks-5.8.3.tgz"
   "version" "5.8.3"
@@ -450,6 +457,11 @@
   dependencies:
     "clsx" "1.1.1"
     "csstype" "3.0.9"
+
+"@mantine/utils@5.10.3":
+  "integrity" "sha512-ZfR1wouA/rz3xTOb2wBnrQpIiyjLcCLLvbUo7rzaG3LhFy7UoGjZ6uqIW9qDrzs7SR4tETRfMxedYagjcoCiEg=="
+  "resolved" "https://registry.npmjs.org/@mantine/utils/-/utils-5.10.3.tgz"
+  "version" "5.10.3"
 
 "@mantine/utils@5.8.3":
   "integrity" "sha512-MprJbMh/z3TbC8yPF2PQftitRwl58w7hvhp7O9fT+9jrvJHKM8V7r15iHMwBw2jgX6zmlksstO7QfhENc0vMHQ=="
@@ -1055,6 +1067,18 @@
   "integrity" "sha512-lEO94zqf1bDA3aepxwnWoHUjA8sZ+2owgcSZjYQy0+uOSEclJX0VieZC+r+wLpSxUHRd6gG32znTWmr+5iGzFw=="
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.295.tgz"
   "version" "1.4.295"
+
+"embla-carousel-react@^7.0.0":
+  "integrity" "sha512-KGnnZWukN+N2H6VjQf6C9mWmInqtCIiInhkGsJ9ckxri3m3Ks6wRDz+RRlV1kcuPHtRoxyFuBBGNwftWqMO9Pw=="
+  "resolved" "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-7.0.9.tgz"
+  "version" "7.0.9"
+  dependencies:
+    "embla-carousel" "7.0.9"
+
+"embla-carousel@7.0.9":
+  "integrity" "sha512-g8pGPd1BxexiZgw8F1aNM1KL3x3eEcz6TGTz20AuqCCynASBV7/h1+aS2rySDc/hHkXqbU8dk7TDhW71LCqVkQ=="
+  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.9.tgz"
+  "version" "7.0.9"
 
 "emoji-regex@^9.2.2":
   "integrity" "sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg=="
@@ -2252,7 +2276,7 @@
     "use-composed-ref" "^1.3.0"
     "use-latest" "^1.2.1"
 
-"react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18", "react@18.2.0":
+"react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.1 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
