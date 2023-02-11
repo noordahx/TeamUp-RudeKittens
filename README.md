@@ -1,2 +1,2 @@
-# RudeKittens submission for CityHach23
+# RudeKittens team submission for CityHack23
 
