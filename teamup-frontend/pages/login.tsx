@@ -11,7 +11,7 @@ import {
   Button,
 } from '@mantine/core'
 
-export function Login() {
+function Login() {
   return (
     <Container size={420} my={40}>
       <Title
@@ -21,7 +21,7 @@ export function Login() {
           fontWeight: 900,
         })}
       >
-        Welcome back!
+        Let's Team Up
       </Title>
       <Text color='dimmed' size='sm' align='center' mt={5}>
         Do not have an account yet?{' '}
@@ -59,3 +59,5 @@ export function Login() {
     </Container>
   )
 }
+
+export default Login
