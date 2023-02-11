@@ -1,6 +1,7 @@
-import { Anchor, Button, Container, createStyles, Group, PasswordInput, Select, TextInput, Title } from '@mantine/core';
+import { Anchor, Button, Container, createStyles, Group, PasswordInput, Select, TextInput, Title, Text, Paper } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import { useState } from 'react';
+
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -47,6 +48,17 @@ function Signup() {
       >
         Sign Up
       </Title>
+      <Text color='dimmed' size='sm' align='center' mt={5}>
+        Already have an account? {' '}
+        <Anchor<'a'>
+          href='/login'
+          size='sm'
+        >
+          Login
+        </Anchor>
+      </Text>
+      
+      <Paper withBorder shadow='md' p={30} mt={30} radius='md'>
       <TextInput
         label="First Name"
         placeholder="John"
@@ -56,7 +68,6 @@ function Signup() {
         onChange={(event) => setFirstName(event.currentTarget.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        mt={30}
         autoComplete="nope"
       />
 
@@ -86,11 +97,12 @@ function Signup() {
         autoComplete="nope"
       />
 
-      <PasswordInput mt={20} label="Password" placeholder="Your password" id="your-password"  />
-
+      <PasswordInput mt={20} label="Password" placeholder="Your password" id="your-password"/>
+      
       <Button fullWidth mt="xl">
-          Sign in
+          Register
         </Button>
+      </Paper>
     </Container>
   );
 }
