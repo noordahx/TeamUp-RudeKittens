@@ -13,8 +13,6 @@ import FindEvents from './components/FindEvents'
 const HomePage = () => {
   const theme = useMantineTheme()
 
-  // const theme = useMantineTheme()
-
   const carouselContent = {
     height: '100%',
     display: 'flex',
@@ -22,18 +20,12 @@ const HomePage = () => {
     alignItems: 'center',
     flexDirection: 'column' as 'column',
     backgroundColor: theme.colors.teal[2],
-    // backgroundimage: url('http://placehold.it/300?text=placehold'),
-    //  style={{
-    //         backgroundImage: `url("https://via.placeholder.com/500")`,
-    //       }}
     borderRadius: 15,
     gap: 15,
   }
 
   return (
     <section id='about'>
-      {/* <Header></Header> */}
-
       <FindEvents></FindEvents>
       <Container style={{ marginBottom: 40 }}>
         <Text color='black' align='center' mb='15px'>
@@ -82,6 +74,12 @@ const HomePage = () => {
             <div style={carouselContent}>
               <Title order={3}>🥊Boxing</Title>
               <Text>A Workshop on Boxing</Text>
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <div style={carouselContent}>
+              <Title order={3}>🧗Hike a new Trail</Title>
+              <Text>Lion Rock</Text>
             </div>
           </Carousel.Slide>
         </Carousel>
