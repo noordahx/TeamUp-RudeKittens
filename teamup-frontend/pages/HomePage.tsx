@@ -1,8 +1,9 @@
 import { Carousel } from '@mantine/carousel'
 import { Grid, Card, Image, Badge, Button, Group } from '@mantine/core'
-
+import styles from '../styles/pages/HomePage.module.css';
 import { BackgroundImage, Center, MantineProvider } from '@mantine/core'
 import { Text, Container, useMantineTheme, Title } from '@mantine/core'
+import { url } from 'inspector'
 
 const HomePage = () => {
   const theme = useMantineTheme()
@@ -236,9 +237,9 @@ const HomePage = () => {
           pl='10px'
         >
           <Carousel.Slide>
-            <div style={carouselContent}>
+            <div style={carouselContent} className={styles.carouselComp}>
               <Title order={3}>🏃‍♀️42km Marathon</Title>
-              <Text>Join Annual Hk marathon</Text>
+              <Text>Join Annual HK marathon</Text>
             </div>
           </Carousel.Slide>
           <Carousel.Slide>

@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import '../styles/globals.css';
 import { MantineProvider } from '@mantine/core'
 import NavBar from '../src/components/NavBar'
 
@@ -18,7 +19,7 @@ export default function App(props: AppProps) {
       </Head>
       <NavBar
         links={[
-          { link: '/login', label: 'Join' },
+          { link: '/homepage', label: 'Join' },
           { link: '/signup', label: 'Create Event' },
           { link: 'ujh', label: 'My Events' },
         ]}
