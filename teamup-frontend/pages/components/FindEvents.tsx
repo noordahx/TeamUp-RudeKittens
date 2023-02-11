@@ -13,7 +13,7 @@ import {
   Group,
 } from '@mantine/core'
 
-import { MantineProvider } from '@mantine/core'
+import { BackgroundImage, Center, MantineProvider } from '@mantine/core'
 
 const SectionFour = () => {
   const theme = useMantineTheme()
@@ -37,37 +37,39 @@ const SectionFour = () => {
 
           <Grid>
             <Grid.Col xs={12} sm={4} md={4} lg={4}>
-              <Card
-                shadow='sm'
-                p='lg'
-                style={{
-                  height: '100%',
-                  backgroundColor: theme.colors.teal[3],
-                }}
-              >
-                <Card.Section>
-                  {/* <Image src={pic1} alt={'sample1'} /> */}
-                </Card.Section>
-
-                <Group
-                  position='apart'
-                  style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+              <BackgroundImage src='' radius='lg'>
+                <Card
+                  shadow='sm'
+                  p='lg'
+                  style={{
+                    height: '100%',
+                    backgroundColor: theme.colors.teal[3],
+                  }}
                 >
-                  <Text weight={500}>⛹🏻 Basketball at Kowloon Tsai Park</Text>
-                  <Badge color='yellow' variant='light'>
-                    Easy
-                  </Badge>
-                </Group>
+                  <Card.Section>
+                    {/* <Image src={pic1} alt={'sample1'} /> */}
+                  </Card.Section>
 
-                <Text size='sm' style={{ marginBottom: 5 }}>
-                  10 people: 5 vs 5
-                </Text>
-                <Text size='sm'>𖡡 Shek Kip Mei</Text>
+                  <Group
+                    position='apart'
+                    style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+                  >
+                    <Text weight={500}>⛹🏻 Basketball at Kowloon Tsai Park</Text>
+                    <Badge color='yellow' variant='light'>
+                      Easy
+                    </Badge>
+                  </Group>
 
-                <Button variant='light' color='yellow' fullWidth mt='14px'>
-                  Find out
-                </Button>
-              </Card>
+                  <Text size='sm' style={{ marginBottom: 5 }}>
+                    10 people: 5 vs 5
+                  </Text>
+                  <Text size='sm'>𖡡 Shek Kip Mei</Text>
+
+                  <Button variant='light' color='yellow' fullWidth mt='14px'>
+                    Find out
+                  </Button>
+                </Card>
+              </BackgroundImage>
             </Grid.Col>
 
             <Grid.Col xs={12} sm={4} md={4} lg={4}>

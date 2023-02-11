@@ -6,7 +6,7 @@
 import { Carousel } from '@mantine/carousel'
 import { Text, Container, useMantineTheme, Title } from '@mantine/core'
 // import Header from './components/Header'
-import SectionFour from './components/SectionFour'
+import FindEvents from './components/FindEvents'
 
 // import { Text, Container, Anchor, MediaQuery, Button } from '@mantine/core'
 // import { MdOutlineArrowDownward } from 'react-icons/md'
@@ -21,8 +21,11 @@ const HomePage = () => {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column' as 'column',
-    backgroundColor: theme.colors.teal[3],
-    backgroundImage: `../public/Images/lime-bicycle-riding.png`,
+    // backgroundColor: theme.colors.teal[3],
+    // backgroundimage: url('http://placehold.it/300?text=placehold'),
+    //  style={{
+    //         backgroundImage: `url("https://via.placeholder.com/500")`,
+    //       }}
     borderRadius: 15,
     gap: 15,
   }
@@ -30,7 +33,8 @@ const HomePage = () => {
   return (
     <section id='about'>
       {/* <Header></Header> */}
-      <SectionFour></SectionFour>
+
+      <FindEvents></FindEvents>
       <Container>
         <Text color='black' align='center' mb='15px'>
           <Title order={1} style={{ marginTop: 30 }}>
