@@ -13,18 +13,6 @@ services:
       - ./db-data/:/var/lib/postgresql/data/
       - ./init.sql:/docker-entrypoint-init.d/init.sql
     
-  pgadmin:
-    image: dpage/pgadmin4
-    ports:
-      - 15423:80
-    env_file:
-      - .env
-    depends_on:
-      - database
-    networks:
-      - postgres-network
-    volumes:
-      - ./pgadmin-data/:/var/lib/pgadmin/
 
 networks:
   postgres-network:

@@ -1,8 +1,27 @@
+IF EXISTS(SELECT FROM pg_catalog.pg_roles
+      WHERE  rolname = 'admin') THEN
+
+      RAISE NOTICE 'Role admin already exists';
+    ELSE
+    BEGIN
+        CREATE ROLE admin LOGIN PASSWORD 'admin';
+        GRANT ALL PRIVILEGES ON DATABASE db TO admin;
+    END;
+END IF;
+
+-- IF EXISTS(SELECT * FROM sys.databases WHERE name = 'db') 
+-- BEGIN
+--     DROP DATABASE db
+-- END
+
+
 IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'db')
 BEGIN
     CREATE DATABASE db
     USE db
 
+
+        
     CREATE TABLE users (
         user_id INT IDENTITY(1,1) PRIMARY KEY,
         name VARCHAR(50) NOT NULL,

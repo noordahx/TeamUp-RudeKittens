@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 
-from . import models, schemas
+from core.database import models
+from core import schemas
 
 def get_user(db: Session, user_id: int):
     return db.query(models.Users).filter(models.Users.user_id == user_id).first()
@@ -13,7 +14,7 @@ def create_user(db: Session, user: schemas.UserCreate):
         name=user.name,
         last_name=user.last_name,
         username=user.username,
-        password_hash=user.password,
+        password_hash=user.password_hash,
     )
     db.add(db_user)
     db.commit()
@@ -26,7 +27,7 @@ def get_event(db: Session, event_id: int):
 def get_events(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Events).offset(skip).limit(limit).all()
 
-def create_event(db: Session, event: schemas.EventCreate, creator_id: int):
+def create_event(db: Session, event: schemas.EventCreate):
     db_event = models.Events(
         name=event.name,
         location=event.location,
@@ -35,7 +36,7 @@ def create_event(db: Session, event: schemas.EventCreate, creator_id: int):
         duration=event.duration,
         skill_level=event.skill_level,
         sports=event.sports,
-        creator_id=creator_id,
+        creator_id=event.creator_id,
     )
     db.add(db_event)
     db.commit()
@@ -43,13 +44,13 @@ def create_event(db: Session, event: schemas.EventCreate, creator_id: int):
     return db_event
 
 def get_participation(db: Session, participation_id: int):
-    return db.query(models.Participations).filter(models.Participations.participation_id == participation_id).first()
+    return db.query(models.Participation).filter(models.Participation.participation_id == participation_id).first()
 
 def get_participations(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Participations).offset(skip).limit(limit).all()
+    return db.query(models.Participation).offset(skip).limit(limit).all()
 
 def create_participation(db: Session, participation: schemas.ParticipationCreate):
-    db_participation = models.Participations(
+    db_participation = models.Participation(
         user_id=participation.user_id,
         event_id=participation.event_id,
     )
@@ -59,7 +60,7 @@ def create_participation(db: Session, participation: schemas.ParticipationCreate
     return db_participation
 
 def get_user_ratings(db: Session, user_ratings_id: int):
-    return db.query(models.UserRatings).filter(models.UserRatings.user_ratings_id == user_ratings_id).first()
+    return db.query(models.UserRatings).filter(models.UserRatings.user_rating_id == user_ratings_id).first()
 
 def get_user_ratings_list(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.UserRatings).offset(skip).limit(limit).all()
