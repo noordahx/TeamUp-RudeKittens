@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
+// import './index.scss'
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props
@@ -9,7 +10,7 @@ export default function App(props: AppProps) {
     <>
       <Head>
         <title>Page title</title>
-        <link rel='shortcut icon' href='/favicon.svg' />
+        <link rel='shortcut icon' href='/favicon.ico' />
         <meta
           name='viewport'
           content='minimum-scale=1, initial-scale=1, width=device-width'
@@ -21,7 +22,7 @@ export default function App(props: AppProps) {
         withNormalizeCSS
         theme={{
           /** Put your mantine theme override here */
-          colorScheme: 'dark',
+          colorScheme: 'light',
         }}
       >
         <Component {...pageProps} />
