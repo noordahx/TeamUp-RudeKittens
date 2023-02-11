@@ -21,7 +21,7 @@ const HomePage = () => {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column' as 'column',
-    // backgroundColor: theme.colors.teal[3],
+    backgroundColor: theme.colors.teal[2],
     // backgroundimage: url('http://placehold.it/300?text=placehold'),
     //  style={{
     //         backgroundImage: `url("https://via.placeholder.com/500")`,
@@ -35,7 +35,7 @@ const HomePage = () => {
       {/* <Header></Header> */}
 
       <FindEvents></FindEvents>
-      <Container>
+      <Container style={{ marginBottom: 40 }}>
         <Text color='black' align='center' mb='15px'>
           <Title order={1} style={{ marginTop: 30 }}>
             Biggest Events
@@ -62,19 +62,25 @@ const HomePage = () => {
         >
           <Carousel.Slide>
             <div style={carouselContent}>
-              <Title order={3}>42km Marathon</Title>
+              <Title order={3}>🏃‍♀️42km Marathon</Title>
               <Text>Join Annual Hk marathon</Text>
             </div>
           </Carousel.Slide>
           <Carousel.Slide>
             <div style={carouselContent}>
-              <Title order={2}>Hike a new Trail</Title>
+              <Title order={3}>🏊🏼‍♂️Ironman Competition</Title>
+              <Text>Try yourself in multiple sports</Text>
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <div style={carouselContent}>
+              <Title order={3}>🧗Hike a new Trail</Title>
               <Text>Kowloon Peak</Text>
             </div>
           </Carousel.Slide>
           <Carousel.Slide>
             <div style={carouselContent}>
-              <Title order={2}>Boxing</Title>
+              <Title order={3}>🥊Boxing</Title>
               <Text>A Workshop on Boxing</Text>
             </div>
           </Carousel.Slide>
