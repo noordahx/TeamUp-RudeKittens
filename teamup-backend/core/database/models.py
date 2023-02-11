@@ -12,6 +12,8 @@ class Users(Base):
     username = Column(String, unique=True, index=True)
     password_hash = Column(String)
 
+    events = relationship("Events", back_populates="creator")
+
 class Events(Base):
     __tablename__ = "events"
 
@@ -24,12 +26,16 @@ class Events(Base):
     sports = Column(String)
     creator_id = Column(Integer, ForeignKey("users.user_id"))
 
+    creator = relationship("Users", back_populates="events")
+
+
 class Participation(Base):
     __tablename__ = "participation"
 
     participation_id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.user_id"))
     event_id = Column(Integer, ForeignKey("events.event_id"))
+
 
 class UserRatings(Base):
     __tablename__ = "user_ratings"
