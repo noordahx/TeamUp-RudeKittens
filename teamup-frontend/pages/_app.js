@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
-import { AuthenticationTitle } from './sign_up';
+import { Login } from './login';
 
 export default function App(props) {
   const { Component, pageProps } = props;
@@ -26,8 +26,8 @@ export default function App(props) {
       </MantineProvider>
 
       <MantineProvider>
-        <AuthenticationTitle>
-        </AuthenticationTitle>
+        <Login>
+        </Login>
       </MantineProvider>
     </>
   );
