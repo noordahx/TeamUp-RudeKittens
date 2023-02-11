@@ -1,26 +1,20 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { NavBar } from './NavBar'
-import { HomePage } from './api/HomePage'
-import { AboutPage } from './api/AboutPage'
-import { ContactPage } from './api/ContactPage'
+import Link from 'next/link'
+import { Demo } from './home'
 
-export function App() {
+function Home() {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route path='/'>
-            <HomePage />
-          </Route>
-          <Route path='/about'>
-            <AboutPage />
-          </Route>
-          <Route path='/contact'>
-            <ContactPage />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </>
+    <ul>
+      <li>
+        <Link href='/'>Home</Link>
+      </li>
+      <li>
+        <Link href='/about'>About Us</Link>
+      </li>
+      <li>
+        <Link href='/blog/hello-world'>Blog Post</Link>
+      </li>
+    </ul>
   )
 }
+
+export default Home
