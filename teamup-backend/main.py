@@ -3,8 +3,9 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from .core import schemas
-from .core.database import models, crud, SessionLocal, engine
+from core import schemas
+from core.database import models, crud
+from core.database.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -20,9 +21,6 @@ def get_db():
 
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-        db_user = crud.get_user_by_username(db, username=user.username)
-        if db_user:
-                raise HTTPException(status_code=400, detail="Username already registered")
         return crud.create_user(db=db, user=user)
 
 @app.get("/users/", response_model=List[schemas.User])
@@ -71,23 +69,19 @@ def read_participation(participation_id: int, db: Session = Depends(get_db)):
 
 @app.post("/user_ratings/", response_model=schemas.UserRatings)
 def create_user_rating(user_rating: schemas.UserRatingsCreate, db: Session = Depends(get_db)):
-        return crud.create_user_rating(db=db, user_rating=user_rating)
+        return crud.create_user_ratings(db=db, user_ratings=user_rating)
 
 @app.get("/user_ratings/", response_model=List[schemas.UserRatings])
 def read_user_ratings(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-        user_ratings = crud.get_user_ratings(db, skip=skip, limit=limit)
+        user_ratings = crud.get_user_ratings_list(db,skip=skip, limit=limit)
         return user_ratings
 
 @app.get("/user_ratings/{user_ratings_id}", response_model=schemas.UserRatings)
 def read_user_rating(user_ratings_id: int, db: Session = Depends(get_db)):
-        db_user_rating = crud.get_user_rating(db, user_ratings_id=user_ratings_id)
+        db_user_rating = crud.get_user_ratings(db, user_ratings_id=user_ratings_id)
         if db_user_rating is None:
                 raise HTTPException(status_code=404, detail="User rating not found")
         return db_user_rating
-
-@app.post("/event_ratings/", response_model=schemas.EventRatings)
-def create_event_rating(event_rating: schemas.EventRatingsCreate, db: Session = Depends(get_db)):
-        return crud.create_event_rating(db=db, event_rating=event_rating)
 
 
 

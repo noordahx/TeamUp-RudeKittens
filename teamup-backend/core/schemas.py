@@ -1,5 +1,5 @@
 from typing import List, Union
-
+from datetime import date, datetime, time, timedelta
 from pydantic import BaseModel, Field
 
 
@@ -9,7 +9,7 @@ class UserBase(BaseModel):
     username: str
 
 class UserCreate(UserBase):
-    password: str
+    password_hash: str
 
 class User(UserBase):
     user_id: int
@@ -21,18 +21,18 @@ class EventBase(BaseModel):
     name: str
     location: str
     description: str
-    date_time: datetime.datetime
+    date_time: datetime
     duration: int
     skill_level: str
     sports: str
+    creator_id: int
 
 class EventCreate(EventBase):
     pass
 
 class Event(EventBase):
     event_id: int
-    creator_id: int
-
+    
     class Config:
         orm_mode = True
 
@@ -58,7 +58,7 @@ class UserRatingsCreate(UserRatingsBase):
     pass
 
 class UserRatings(UserRatingsBase):
-    user_ratings_id: int
+    user_rating_id: int
 
     class Config:
         orm_mode = True
