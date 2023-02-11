@@ -10,7 +10,7 @@ import {
   Anchor,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons';
+import { IconLogout, IconUser  } from '@tabler/icons';
 
 const HEADER_HEIGHT = 60;
 
@@ -57,7 +57,7 @@ const useStyles = createStyles((theme) => ({
 interface HeaderActionProps {
   links: { link: string; label: string; links: { link: string; label: string }[] }[];
 }
- 
+
 function NavBar({ links }: HeaderActionProps) {
   const { classes } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
@@ -105,9 +105,15 @@ function NavBar({ links }: HeaderActionProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-        <Button radius="xl" sx={{ height: 30 }}>
-          Get early access
-        </Button>
+        <Group>
+
+          <Button radius="xl">
+            <IconUser></IconUser>
+          </Button>
+          <Button variant="subtle" color="gray" radius="xl">
+            <IconLogout></IconLogout>
+          </Button>
+        </Group>
       </Container>
     </Header>
   );
