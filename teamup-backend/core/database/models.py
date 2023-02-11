@@ -13,6 +13,9 @@ class Users(Base):
     password_hash = Column(String)
 
     events = relationship("Events", back_populates="creator")
+    participate = relationship("Participation", back_populates="user")
+    user_ratings_rater = relationship("UserRatings", back_populates="rater")
+    user_ratings_ratee = relationship("UserRatings", back_populates="ratee")
 
 class Events(Base):
     __tablename__ = "events"
@@ -27,7 +30,7 @@ class Events(Base):
     creator_id = Column(Integer, ForeignKey("users.user_id"))
 
     creator = relationship("Users", back_populates="events")
-
+    participants = relationship("Participation", back_populates="event")
 
 class Participation(Base):
     __tablename__ = "participation"
@@ -36,6 +39,8 @@ class Participation(Base):
     user_id = Column(Integer, ForeignKey("users.user_id"))
     event_id = Column(Integer, ForeignKey("events.event_id"))
 
+    event = relationship("Events", back_populates="participants")
+    user = relationship("Users", back_populates="participate")
 
 class UserRatings(Base):
     __tablename__ = "user_ratings"
@@ -44,3 +49,6 @@ class UserRatings(Base):
     rater_id = Column(Integer, ForeignKey("users.user_id"))
     ratee_id = Column(Integer, ForeignKey("users.user_id"))
     rating = Column(Integer)
+
+    rater = relationship("Users", back_populates="user_ratings_rater")
+    ratee = relationship("Users", back_populates="user_ratings_ratee")
