@@ -1,5 +1,5 @@
 <h2 align="center"> 
-<img src="TeamUp.png" width="50" alt="accessibility text">TeamUp: Sports Buddies Matching Platform
+<img src="TeamUp.png" width="50" alt="accessibility text">TeamUp: Sports Buddies Matching Platform<img src="TeamUp.png" width="50" alt="accessibility text">
 </h2>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 The World Health Organization (WHO) states that **physical inactivity** is a leading risk factor for non-communicable diseases, including cardiovascular disease, diabetes, and cancer (WHO, 2019). So, staying active is important. However, **doing sports keeps growing inconvenient**, especially because... 
 
-**Finding teammates is a getting harder!**. Engaging in sports alone is correlated with less accountability, making it difficult for people to stick to a fitness routine due to a lack of social support.
+**Finding teammates is a getting harder!** Engaging in sports alone is correlated with less accountability, making it difficult for people to stick to a fitness routine due to a lack of social support.
 
 By providing a platform to help people find workout partners and participate in team sports, we want to address one of these barriers and make it easier for people to stay active.
 
