@@ -1,5 +1,10 @@
-# <img src="https://media.giphy.com/media/Z0Gtsd3EwdKTu/giphy.gif" width="30"> RudeKittens team submission for CityHack23 
+<h2 align="center"> 
+<img src="TeamUp.png" width="50" alt="accessibility text">TeamUp: Sports Buddies Matching Platform
+</h2>
 
+<p align="center">
+  <em>RudeKittens team submission for CityHack23</em>
+</p>
 
 ### 🧘 Problem we want to solve:
 
